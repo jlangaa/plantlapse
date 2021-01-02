@@ -44,13 +44,13 @@ dateprint("success")
 dateprint("Capturing image")
 
 with pc.PiCamera(resolution = (3280, 2464)) as cam:
-    cam.iso = 50
+    cam.iso = 20
     cam.rotation = 270
     time.sleep(2)
     cam.exposure_mode = 'off'
     cam.awb_mode = 'off'
-    cam.awb_gains = (1.3, 1.4)
-    cam.shutter_speed = 6000
+    cam.awb_gains = (1.2, 1.4)
+    cam.shutter_speed = 8000
 
     #img_name = "img_{:04d}.jpg".format(n_lines)
     img_name = "test.jpg"
