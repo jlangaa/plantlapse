@@ -43,17 +43,17 @@ with open(OUTFILE, 'a+') as f:
 dateprint("success")
 dateprint("Capturing image")
 
-cam = pc.PiCamera(resolution = (3280, 2464))
-cam.iso = 200
-cam.exposure_mode = 'off'
-cam.awb_mode = 'off'
-cam.awb_gains = (1.4, 1.3)
-cam.shutter_speed = 3000
+with pc.PiCamera(resolution = (3280, 2464)) as cam:
+    cam.iso = 50
+    cam.rotation = 270
+    time.sleep(2)
+    cam.exposure_mode = 'off'
+    cam.awb_mode = 'off'
+    cam.awb_gains = (1.3, 1.4)
+    cam.shutter_speed = 6000
 
-cam.start_preview()
-time.sleep(2)
-
-img_name = "img_{:04d}.jpg".format(n_lines)
-cam.capture(os.path.join(OUT_DIR,img_name))
+    #img_name = "img_{:04d}.jpg".format(n_lines)
+    img_name = "test.jpg"
+    cam.capture(os.path.join(OUT_DIR,img_name))
 dateprint("success")
 
