@@ -16,7 +16,7 @@ def dateprint(msg):
     print("{}: {}".format(d, msg))
 
 dateprint("START")
-dateprint("Output Directory: {}".format(OuT_DIR))
+dateprint("Output Directory: {}".format(OUT_DIR))
 dateprint("Log file name: {}".format(OUTFILENAME))
 dateprint("DHT PIN: {}".format(DHT_PIN))
 
@@ -36,7 +36,7 @@ hum, temp = Adafruit_DHT.read_retry(sensor, DHT_PIN)
 dateprint("success")
 dateprint("writing sensor data to file")
 
-with open(OUTFILE, 'a') as f:
+with open(OUTFILE, 'a+') as f:
     f.seek(0,0)
     n_lines = len(f.readlines())
     f.writelines('{}\t{}\t{}\t{}\r\n'.format(n_lines, datetime.now(), temp, hum))
@@ -54,6 +54,6 @@ cam.start_preview()
 time.sleep(2)
 
 img_name = "img_{:04d}.jpg".format(n_lines)
-cam.capture()
+cam.capture(os.path.join(OUT_DIR,img_name))
 dateprint("success")
 
