@@ -6,7 +6,7 @@ t=$(date +%H%M)
 
 python3 ~/Projects/plantlapse/lightswitch.py on
 
-#python3 ~/Projects/plantlapse/plantlapse.py ~/plantlapse_data
+python3 ~/Projects/plantlapse/plantlapse.py ~/plantlapse_data
 
 if [[ $t -gt 2300 || $t -lt 800 ]]; then
 	echo $(date)": Turning off the light"
@@ -15,7 +15,7 @@ if [[ $t -gt 2300 || $t -lt 800 ]]; then
 fi
 
 echo $(date)": Converting images to GIF"
-#convert -delay 20 -resize 40% -loop 0 ~/plantlapse_data/img*.jpg ~/plantlapse_data/timelapse.gif
+convert -delay 20 -resize 40% -loop 0 ~/plantlapse_data/img*.jpg ~/plantlapse_data/timelapse.gif
 echo $(date)": Complete"
 
 echo "================================================================================"
