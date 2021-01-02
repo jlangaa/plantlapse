@@ -13,7 +13,7 @@ except IndexError:
     print('please specify a state')
     exit
 
-pinstate = {'on': 5, 'off': 10}
+pinstate = {'off': 5, 'on': 10}
 duty_cycle = pinstate[state]
 
 GPIO.setmode(GPIO.BCM)

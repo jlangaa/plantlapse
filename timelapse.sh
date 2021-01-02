@@ -4,13 +4,13 @@
 
 t=$(date +%H:%M)
 
-python3 ~/Projects/plantlapse/servo.py on
+python3 ~/Projects/plantlapse/lightswitch.py on
 
 python3 ~/Projects/plantlapse/timelapse.py 23 ~/plantlapse
 
 if [[ $t > 23:00 || $t < 8:00 ]]; then
 	echo $(date)": Turning off the light"
-	python3 ~/Projects/plantlapse/servo.py off	
+	python3 ~/Projects/plantlapse/lightswitch.py off	
 	echo $(date)": Complete"
 fi
 
