@@ -8,7 +8,7 @@ python3 ~/Projects/plantlapse/lightswitch.py on
 
 python3 ~/Projects/plantlapse/plantlapse.py ~/plantlapse_data
 
-if [[ $t -gt 2300 || $t -lt 800 ]]; then
+if [[ $t -ge 2300 || $t -le 800 ]]; then
 	echo $(date)": Turning off the light"
 	python3 ~/Projects/plantlapse/lightswitch.py off	
 	echo $(date)": Complete"
