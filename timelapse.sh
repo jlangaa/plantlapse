@@ -2,7 +2,7 @@
 
 # Wrapper for timelapse.py to be used with cron
 
-t=$(date +%H%M)
+t=$((10#`date +%H%M`))
 
 python3 ~/Projects/plantlapse/lightswitch.py on
 
