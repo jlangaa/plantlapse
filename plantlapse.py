@@ -62,7 +62,7 @@ with pc.PiCamera(resolution = (3280, 2464)) as cam:
     cam.exposure_mode = 'off'
     cam.awb_mode = 'off'
     cam.awb_gains = (1.2, 1.4)
-    cam.shutter_speed = 7000
+    cam.shutter_speed = 8000
 
     cam.annotate_text = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
